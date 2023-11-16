@@ -53,7 +53,7 @@ namespace NewspaperSellerSimulation
                 }
                 Object[] lastRow = { "Total", "", "", "", "", totalSales, totalLost, totalScrap, totalNet };
                 dataGridView1.Rows.Add(lastRow);
-                Calculations.systemTable.PerformanceMeasures.TotalCost = (decimal)(ExtractData.dataModel.numOfNewspapers * 33) / 100 * 20;
+                Calculations.systemTable.PerformanceMeasures.TotalCost = (decimal)(ExtractData.dataModel.numOfNewspapers * 33) / 100 * ExtractData.dataModel.numOfRecords;
                 Calculations.systemTable.PerformanceMeasures.TotalSalesProfit = totalSales;
                 Calculations.systemTable.PerformanceMeasures.TotalLostProfit = totalLost;
                 Calculations.systemTable.PerformanceMeasures.TotalScrapProfit = totalScrap;
@@ -71,7 +71,7 @@ namespace NewspaperSellerSimulation
 
         private void test_button_Click(object sender, EventArgs e)
         {
-            string testingResult = TestingManager.Test(Calculations.systemTable, Constants.FileNames.TestCase1);
+            string testingResult = TestingManager.Test(Calculations.systemTable, Constants.FileNames.TestCase3);
             MessageBox.Show(testingResult);
         }
     }

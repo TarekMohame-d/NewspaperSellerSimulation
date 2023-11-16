@@ -147,10 +147,10 @@ namespace NewspaperSellerModels
 
         public static void fillSystemTable()
         {
-            SimulationCase simulationCase;
-            List<int> newsdaysRandomNumbers = RandomNumber.GenerateRandomNumbers(20);
-            List<int> demandRandomNumbers = RandomNumber.GenerateRandomNumbers(20);
             DataModel model = ExtractData.dataModel;
+            SimulationCase simulationCase;
+            List<int> newsdaysRandomNumbers = RandomNumber.GenerateRandomNumbers(model.numOfRecords);
+            List<int> demandRandomNumbers = RandomNumber.GenerateRandomNumbers(model.numOfRecords);
             int daysWithMoreDemand = 0;
             int daysWithUnsoldPapers = 0;
             for (int i = 0; i < model.numOfRecords; i++)
