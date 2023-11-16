@@ -41,6 +41,7 @@ namespace NewspaperSellerSimulation
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.back_button = new System.Windows.Forms.Button();
+            this.test_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@ namespace NewspaperSellerSimulation
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1224, 606);
+            this.dataGridView1.Size = new System.Drawing.Size(1224, 540);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -153,11 +154,24 @@ namespace NewspaperSellerSimulation
             this.back_button.UseVisualStyleBackColor = true;
             this.back_button.Click += new System.EventHandler(this.back_button_Click);
             // 
+            // test_button
+            // 
+            this.test_button.BackColor = System.Drawing.SystemColors.Window;
+            this.test_button.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.test_button.Location = new System.Drawing.Point(62, 649);
+            this.test_button.Name = "test_button";
+            this.test_button.Size = new System.Drawing.Size(135, 35);
+            this.test_button.TabIndex = 2;
+            this.test_button.Text = "TEST";
+            this.test_button.UseVisualStyleBackColor = false;
+            this.test_button.Click += new System.EventHandler(this.test_button_Click);
+            // 
             // SimulationTable
             // 
             this.BackgroundImage = global::NewspaperSellerSimulation.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.test_button);
             this.Controls.Add(this.back_button);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -165,6 +179,7 @@ namespace NewspaperSellerSimulation
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simulation Table";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SimulationTable_FormClosing);
+            this.Load += new System.EventHandler(this.SimulationTable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -183,5 +198,6 @@ namespace NewspaperSellerSimulation
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.Button back_button;
+        private System.Windows.Forms.Button test_button;
     }
 }
