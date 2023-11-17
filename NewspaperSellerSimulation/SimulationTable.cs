@@ -74,5 +74,10 @@ namespace NewspaperSellerSimulation
             string testingResult = TestingManager.Test(Calculations.systemTable, Constants.FileNames.TestCase3);
             MessageBox.Show(testingResult);
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
