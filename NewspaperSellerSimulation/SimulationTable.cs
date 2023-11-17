@@ -27,6 +27,10 @@ namespace NewspaperSellerSimulation
 
         private void back_button_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+            Calculations.demandDistributionTable.Clear();
+            Calculations.newsdayTable.Clear();
+            Calculations.systemTable = new SimulationSystem();
             this.Hide();
             new ShowDataForm().Show();
         }
@@ -71,7 +75,30 @@ namespace NewspaperSellerSimulation
 
         private void test_button_Click(object sender, EventArgs e)
         {
-            string testingResult = TestingManager.Test(Calculations.systemTable, Constants.FileNames.TestCase3);
+            string testCase = "";
+            List<string> list = new List<string>() {
+                Constants.FileNames.TestCase1,
+                Constants.FileNames.TestCase2,
+                Constants.FileNames.TestCase3
+            };
+            switch(ExtractData.fileName)
+            {
+                case "TestCase1.txt":
+                    {
+                        testCase = list[0];
+                    }break;
+                case "TestCase2.txt":
+                    {
+                        testCase = list[1];
+                    }
+                    break;
+                case "TestCase3.txt":
+                    {
+                        testCase = list[2];
+                    }
+                    break;
+            }
+            string testingResult = TestingManager.Test(Calculations.systemTable, testCase);
             MessageBox.Show(testingResult);
         }
 

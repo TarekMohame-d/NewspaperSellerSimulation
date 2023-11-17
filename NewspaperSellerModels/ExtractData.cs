@@ -10,8 +10,8 @@ namespace NewspaperSellerModels
 {
     public class ExtractData
     {
-        public static int lineIndex = 0;
         public static DataModel dataModel;
+        public static string fileName;
         public static void extractFileData(string filePath)
         {
             dataModel = new DataModel();

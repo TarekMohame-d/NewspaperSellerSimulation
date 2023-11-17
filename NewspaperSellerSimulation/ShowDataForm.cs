@@ -32,6 +32,7 @@ namespace NewspaperSellerSimulation
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     ExtractData.extractFileData(openFileDialog.FileName);
+                    ExtractData.fileName = openFileDialog.FileName.Split('\\').Last(); ;
                 }
             }
             if (ExtractData.dataModel != null)
